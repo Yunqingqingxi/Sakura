@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.top-Bar {
+    border: 1px;
+    background-color: #dffaff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 新增：将子元素分散对齐 */
+}
+
+#img {
+    height: 37px;
+    margin-right: 10px;
+    border-radius: 100px;
+}
+
+#panel {
+    font-size: large;
+    margin-right: auto;
+}
+
+#search{
+    margin-right: 95px;
+    float:left;
+    width:600px;/*宽400*/
+    height:38px;/*高38（因为文本框内外边框要占用1像素所以总体高度减2，其他盒子同理）*/
+    outline:none;
+    border:none;/*取消文本框内外边框*/
+}
+#button{
+    background-color:#f66f6a;
+    color:white;
+    width: 150px;
+    height: 45px;
+    border:0;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-right: 250px;
+}
+#main{
+    margin-right: 20px;
+}
+#send{
+    margin-right: 20px;
+}
+#login{
+    margin-right: 30px;
+}
+.top-Bar-pos {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    width: 200px; /* 新增：调整搜索栏宽度 */
+    padding: 5px; /* 新增：调整搜索栏内边距 */
+    margin-right: 10px;
+}
+
+.top-Bar-tool {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.right-Bar-frame{
+    top:60px;
+    width: 300px;
+    height: 350px;
+    box-shadow: 2px 2px 10px #ddd;
+    position: absolute;
+    border-radius: 10px;
+    background-image: url("../image/R-C.jpg");
+}
+#add{
+    position: relative;
+    border: none;  /* 设置边框为无 */
+    background-color: transparent;  /* 设置背景为透明，如果需要的话 */
+    cursor: pointer;
+    font-size: large;
+    left: 70px;
+}
+#per_img{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    top: 30px;
+    left: 95px;
+}
+#per_username{
+    position: absolute;
+    top: 110px;
+    left: 100px;
+}
+.right-Bar-frame-filed{
+    position: absolute;
+    top: 150px;
+    left: 20px;
+}
+#center-frame{
+    position: absolute;
+    top:120px;
+    left: 510px;
+}
+.frame{
+    border: 1px;
+    position: absolute;
+}
+
+/* 博客编辑页的版心 */
+.blog-edit-container {
+    top: 75px;
+    left: 330px;
+    width: 1000px;
+    height: calc(100% - 50px);
+    margin: 0 auto;
+    position: absolute;
+}
+
+/* 标题编辑区 */
+.blog-edit-container .title {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.blog-edit-container .title #title {
+    width: 795px;
+    height: 50px;
+    border-radius: 10px;
+    padding-left: 20px;
+    border: none;
+    outline: none;
+    background-color: rgba(41, 83, 149, 0.3);
+    font-size: 15px;
+}
+
+.blog-edit-container .title #submit {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 192 , 153, 0.4);
+    font-size: 20px;
+}
+
+.blog-edit-container .title #submit:active {
+    background-color: rgba(41, 83, 149, 0.3);
+}
+
+#editor {
+    border-radius: 10px;
+    border: none;
+    opacity: 0.7;
+}
