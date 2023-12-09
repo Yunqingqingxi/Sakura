@@ -34,7 +34,7 @@
         </form>
         <div class="top-Bar-tool">
             <a href="Sakura.html" id="main">主页</a>
-            <a href="Sakura.html" id="send">发布</a>
+            <a href="wzxq2.jsp" id="send">查看文章</a>
             <a href="login.jsp" id="login">登录</a>
             <a href="login.jsp" id="down" style="display: none">注销</a>
         </div>
