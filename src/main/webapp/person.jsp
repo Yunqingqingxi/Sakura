@@ -11,7 +11,6 @@
     <title>个人中心</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/frame.css">
-    \
 </head>
 <body>
 <div class="frame">
