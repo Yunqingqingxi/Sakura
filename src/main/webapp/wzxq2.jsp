@@ -57,13 +57,15 @@ To change this template use File | Settings | File Templates.
         }
         .hk{
           float: right;
+            margin-right: 20px;
         }
         .name{
             font-size: 28px;
         }
+
     </style>
 </head>
-<body>
+<body class="img">
 <%
     HttpSession session1 = request.getSession();
     String loggedInUsername = (String) session1.getAttribute("username");
@@ -135,7 +137,7 @@ To change this template use File | Settings | File Templates.
 <%--</script>--%>
 <script>$m.innerHTML = marked.parse($t.value);</script>
 </body>
-
+<script src="js/flower.js"></script>
 </html>
 
 

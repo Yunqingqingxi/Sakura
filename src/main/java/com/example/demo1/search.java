@@ -31,7 +31,7 @@ public class search extends HttpServlet {
             req.setAttribute("error", "Title cannot be empty.");
         }
 
-        req.getRequestDispatcher("searchResult.jsp").forward(req, resp);
+        req.getRequestDispatcher("wzxq2.jsp").forward(req, resp);
     }
 
     @Override

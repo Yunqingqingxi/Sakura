@@ -23,7 +23,6 @@
         content = t[2] != null ? t[2] : "";
     }
     // 读取username,title和content
-
 %>
 username:<%= username%>><br>
 title:<%= title%>><br>

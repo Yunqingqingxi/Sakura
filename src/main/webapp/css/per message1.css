@@ -24,6 +24,7 @@ body {
     top: 80px;
     right: 20px;
     transition: transform 0.3s ease-in-out;
+    background: #eafdfd;
 }
 
 
