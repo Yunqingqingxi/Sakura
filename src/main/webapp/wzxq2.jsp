@@ -53,6 +53,12 @@
             font-size: 16px;
             color: #888;
         }
+        .hk{
+          float: right;
+        }
+        .name{
+            font-size: 28px;
+        }
     </style>
 </head>
 <body>
@@ -84,8 +90,32 @@
             e.printStackTrace();
         }
     %>
-
-
+</div>
+<div  class="container">
+<a>评论</a>
+<a class="hk" href="pl.jsp">发表评论</a>
+    <%
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/user", "root", "123456");
+            String sql1 = "SELECT * FROM pl";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql1);
+            ResultSet resultSet1 = preparedStatement.executeQuery();
+            while (resultSet1.next()) {
+    %>
+    <div class="name"><%-- 从数据库中获取文章内容 --%><p><%= resultSet1.getString("name") %></p></div>
+    <div><%-- 从数据库中获取文章内容 --%><p><%= resultSet1.getString("content") %></p></div>
+    <div class="date"><%= resultSet1.getString("date") %></div>
+    <hr>
+    <%
+            }
+            resultSet1.close();
+            preparedStatement.close();
+            connection.close();
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+    %>
 </div>
 </body>
 </html>

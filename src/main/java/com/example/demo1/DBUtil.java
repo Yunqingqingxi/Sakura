@@ -284,4 +284,26 @@ public class DBUtil {
             }
         }
     }
-}
+    public static void insertMessage2(String name,String content) throws SQLException {
+        Connection conn = DBUtil.getConnection();
+        try {
+            String sql = "insert into pl (name,content) Values (?,?)";
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setString(1, name);
+            statement.setString(2, content);
+            statement.executeUpdate();
+            System.out.println("评论pl:插入成功");
+        } catch (SQLException e) {
+            String sql = "UPDATE pl set  name=?,content=?  ";
+
+            try (PreparedStatement statement = conn.prepareStatement(sql)) {
+                statement.setString(1, content);
+                statement.executeUpdate();
+                System.out.println("评论pl:更新成功");
+            }catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        } finally {
+            conn.close();
+        }
+}}
