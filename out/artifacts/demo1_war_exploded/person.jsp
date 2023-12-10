@@ -10,7 +10,7 @@
 <head>
     <title>个人中心</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/frame.css">\
+    <link rel="stylesheet" href="css/frame.css">
 </head>
 <body>
 <div class="frame">
@@ -18,7 +18,7 @@
         <img src="image/XG.jpg" alt="" id="img">
         <p id="panel">首页</p>
         <div class="top-Bar-pos">
-            <input class="search-input" type="search" placeholder="搜索" id="search" />
+            <input class="search-input" type="search" placeholder="搜索" id="search"/>
             <button type="submit" name="search" id="button">搜索</button>
         </div>
         <div class="top-Bar-tool">

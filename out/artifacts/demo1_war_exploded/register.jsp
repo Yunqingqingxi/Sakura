@@ -13,20 +13,20 @@
     <link rel="stylesheet" href="css/register.css">
 </head>
 <section>
-<body>
-<%
-    response.setHeader("cache-control","public");
-    try {
-        Thread.sleep(1000);
-    } catch (InterruptedException e) {
-        throw new RuntimeException(e);
-    }
-    String message = (String) request.getAttribute("message");
-    if(message==null){
-        message="";
-    }
-%>
-<%--    创建花瓣--%>
+    <body>
+    <%
+        response.setHeader("cache-control", "public");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        String message = (String) request.getAttribute("message");
+        if (message == null) {
+            message = "";
+        }
+    %>
+    <%--    创建花瓣--%>
     <div class="register-frame"></div>
     <div class="box"></div>
     <!--背景圆-->
@@ -167,12 +167,12 @@
                     function startSakura() {
 
                         requestAnimationFrame = window.requestAnimationFrame ||
-                            window.mozRequestAnimationFrame ||
-                            window.webkitRequestAnimationFrame ||
-                            window.msRequestAnimationFrame ||
-                            window.oRequestAnimationFrame;
+                                window.mozRequestAnimationFrame ||
+                                window.webkitRequestAnimationFrame ||
+                                window.msRequestAnimationFrame ||
+                                window.oRequestAnimationFrame;
                         let canvas = document.createElement('canvas'),
-                            cxt;
+                                cxt;
                         staticx = true;
                         canvas.height = window.innerHeight;
                         canvas.width = window.innerWidth;
@@ -227,9 +227,9 @@
                         }
                     }
                 </script>
-                </form>
+            </form>
         </div>
     </div>
-</body>
+    </body>
 </section>
 </html>

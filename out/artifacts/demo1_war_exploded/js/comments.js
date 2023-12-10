@@ -1,4 +1,4 @@
-document.getElementById("commentForm").addEventListener("submit", function(event) {
+document.getElementById("commentForm").addEventListener("submit", function (event) {
     event.preventDefault();
 
     var content = document.querySelector("#commentForm textarea").value;
@@ -8,7 +8,7 @@ document.getElementById("commentForm").addEventListener("submit", function(event
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/CommentServlet", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             // 评论提交成功，更新评论列表
             updateCommentList();
@@ -20,7 +20,7 @@ document.getElementById("commentForm").addEventListener("submit", function(event
 function updateCommentList() {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "/CommentServlet?article_id=${article_id}", true);
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var comments = JSON.parse(xhr.responseText);
             var commentList = document.getElementById("commentList");

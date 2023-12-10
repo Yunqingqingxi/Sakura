@@ -15,10 +15,10 @@
 <section>
     <body>
     <%
-        response.setHeader("cache-control","public");
+        response.setHeader("cache-control", "public");
         String message = (String) request.getAttribute("message");
-        if(message==null){
-            message="";
+        if (message == null) {
+            message = "";
         }
     %>
     <%--    创建花瓣--%>
@@ -161,12 +161,12 @@
                     function startSakura() {
 
                         requestAnimationFrame = window.requestAnimationFrame ||
-                            window.mozRequestAnimationFrame ||
-                            window.webkitRequestAnimationFrame ||
-                            window.msRequestAnimationFrame ||
-                            window.oRequestAnimationFrame;
+                                window.mozRequestAnimationFrame ||
+                                window.webkitRequestAnimationFrame ||
+                                window.msRequestAnimationFrame ||
+                                window.oRequestAnimationFrame;
                         let canvas = document.createElement('canvas'),
-                            cxt;
+                                cxt;
                         staticx = true;
                         canvas.height = window.innerHeight;
                         canvas.width = window.innerWidth;

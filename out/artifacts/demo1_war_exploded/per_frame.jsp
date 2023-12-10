@@ -23,23 +23,24 @@
 </head>
 <body>
 <div class="frame">
-<div class="top-Bar">
-    <img src="image/XG.jpg" alt="" id="img">
-    <p id="panel">首页</p>
-    <form action="search" method="post">
-    <div class="top-Bar-pos">
-        <input class="search-input" type="search" placeholder="搜索" id="search" name="s-title" />
-        <button type="submit" name="search" id="button">搜索</button>
+    <div class="top-Bar">
+        <img src="image/XG.jpg" alt="" id="img">
+        <p id="panel">首页</p>
+        <form action="search" method="post">
+            <div class="top-Bar-pos">
+                <input class="search-input" type="search" placeholder="搜索" id="search" name="s-title"/>
+                <button type="submit" name="search" id="button">搜索</button>
+            </div>
+        </form>
+        <div class="top-Bar-tool">
+            <a href="Sakura.html" id="main">主页</a>
+            <a href="wzxq2.jsp" id="send">查看文章</a>
+            <a href="login.jsp" id="login">登录</a>
+            <a href="login.jsp" id="down" style="display: none">注销</a>
+        </div>
     </div>
-    </form>
-    <div class="top-Bar-tool">
-        <a href="Sakura.html" id="main">主页</a>
-        <a href="Sakura.html" id="send">发布</a>
-        <a href="login.jsp" id="login">登录</a>
-        <a href="login.jsp" id="down" style="display: none">注销</a>
-    </div>
-</div>
-    <p><%= request.getAttribute("user_message") %></p>
+    <p><%= request.getAttribute("user_message") %>
+    </p>
     <%
         // 从session中获取用户名信息
         HttpSession session1 = request.getSession();
@@ -50,9 +51,9 @@
 
         // 从info数据库中获取信息
         String[] s = DBUtil.selectMes(loggedInUsername);
-        String name=null;
-        String sex=null;
-        String email=null;
+        String name = null;
+        String sex = null;
+        String email = null;
         String age;
 
         if (s.length == 4) {
@@ -77,26 +78,27 @@
         <h2 id="per_username">我是<span><%= name%></span></h2>
         <div class="right-Bar-frame-filed">
             <p>性别:<span><%= sex %></span></p>
-            <p>账号:<%=name1%></p>
+            <p>账号:<%=name1%>
+            </p>
             <p>邮箱:<span><%= email %></span></p>
             <button id="add">添加资料</button>
         </div>
     </div>
 
     <form action="message" method="post">
-    <div class="blog-edit-container">
-        <!-- 标题编辑区 -->
-        <div class="title">
-            <input type="text" placeholder="在这里写下文章标题" id="title" name="title">
-            <input type="submit" value="发布文章" id="submit">
-        </div>
+        <div class="blog-edit-container">
+            <!-- 标题编辑区 -->
+            <div class="title">
+                <input type="text" placeholder="在这里写下文章标题" id="title" name="title">
+                <input type="submit" value="发布文章" id="submit">
+            </div>
 
-        <!-- 内容编辑区 -->
-        <div id="editor">
+            <!-- 内容编辑区 -->
+            <div id="editor">
 
+            </div>
         </div>
-    </div>
-</form>
+    </form>
 </div>
 <div>
     <form action="person" method="post">
@@ -134,15 +136,15 @@
         if (nameValue.trim() !== "") {
 
             // 隐藏登录按钮,显示注销按钮
-            document.querySelector('#login').style.display='none';
+            document.querySelector('#login').style.display = 'none';
 
-            document.querySelector('#down').style.display='inline';
+            document.querySelector('#down').style.display = 'inline';
 
             // 隐藏个人信息表单
             document.querySelector('.form-container').style.display = 'none';
 
-            if(email.trim() !== ""){
-                document.querySelector('#add').style.display='none';
+            if (email.trim() !== "") {
+                document.querySelector('#add').style.display = 'none';
             }
 
             // 检查 sessionStorage 中的标志
@@ -173,7 +175,7 @@
     });
 </script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         // Your script here
         let clickCount = 0;
         const paragraphElement = document.getElementById('add');

@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -84,7 +84,7 @@ section .color:nth-child(3) {
 /* 背景圆动画 */
 
 @keyframes animate {
-    0%, 100%{
+    0%, 100% {
         transform: translateY(-50px);
     }
     50% {
@@ -232,7 +232,8 @@ section .color:nth-child(3) {
     font-weight: 600;
     text-decoration: none;
 }
-.main-frame{
+
+.main-frame {
     position: absolute;
     background-image: url("preview.jpg");
     height: 100%;
