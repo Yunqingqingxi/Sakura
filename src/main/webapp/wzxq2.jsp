@@ -76,9 +76,10 @@
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
     %>
-    <h1><%-- 从数据库中获取文章标题 --%><%= resultSet.getString("title") %></h1>
+    <h1 style="text-align: center"><%-- 从数据库中获取文章标题 --%><%= resultSet.getString("title") %></h1>
     <hr>
-    <div class="date"><%= resultSet.getString("datetime") %></div>
+    <div class="date" style="text-align: center"><%= resultSet.getString("datetime") %>
+    </div>
     <hr>
     <div><%-- 从数据库中获取文章内容 --%><p><%= resultSet.getString("content") %></p></div>
     <%
@@ -97,7 +98,7 @@
     <%
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/user", "root", "123456");
+            Connection connection = DBUtil.getConnection();
             String sql1 = "SELECT * FROM pl";
             PreparedStatement preparedStatement = connection.prepareStatement(sql1);
             ResultSet resultSet1 = preparedStatement.executeQuery();

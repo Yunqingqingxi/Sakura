@@ -2,7 +2,10 @@ package com.example.demo1;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -37,7 +40,7 @@ public class Message extends HttpServlet {
             result = Server.insertMessage(username, title, content);
 
             if ("Success".equals(result)) {
-                req.getRequestDispatcher("success.jsp").forward(req, resp);
+                req.getRequestDispatcher("wzxq2.jsp").forward(req, resp);
             } else {
                 System.out.println("fail");
             }
