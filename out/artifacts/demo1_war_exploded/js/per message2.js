@@ -1,6 +1,6 @@
 // script.js
 
-document.getElementById('submitBtn').addEventListener('click', function() {
+document.getElementById('submitBtn').addEventListener('click', function () {
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
     var age = document.getElementById('age').value;

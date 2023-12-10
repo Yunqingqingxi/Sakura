@@ -63,14 +63,14 @@
         animation: a2 2s linear infinite;
     }
 
-    @keyframes a1{
-        to{
+    @keyframes a1 {
+        to {
             transform: rotate(360deg);
         }
     }
 
-    @keyframes a2{
-        to{
+    @keyframes a2 {
+        to {
             transform: rotate(-360deg);
         }
     }
@@ -83,14 +83,14 @@
 </div>
 
 <%
-    response.setHeader("cache-control","public");
+    response.setHeader("cache-control", "public");
     // 让线程睡两秒
-    try{
-        Thread.sleep(3*1000);
-    }catch (InterruptedException e){
+    try {
+        Thread.sleep(3 * 1000);
+    } catch (InterruptedException e) {
         throw new RuntimeException(e);
     }
-    request.getRequestDispatcher("per_frame.jsp").forward(request,response);
+    request.getRequestDispatcher("per_frame.jsp").forward(request, response);
 %>
 
 </body>

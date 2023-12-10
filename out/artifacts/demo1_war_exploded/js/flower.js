@@ -108,12 +108,12 @@ function getRandom(option) {
 function startSakura() {
 
     requestAnimationFrame = window.requestAnimationFrame ||
-        window.mozRequestAnimationFrame ||
-        window.webkitRequestAnimationFrame ||
-        window.msRequestAnimationFrame ||
-        window.oRequestAnimationFrame;
+            window.mozRequestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.msRequestAnimationFrame ||
+            window.oRequestAnimationFrame;
     let canvas = document.createElement('canvas'),
-        cxt;
+            cxt;
     staticx = true;
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;

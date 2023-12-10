@@ -18,9 +18,9 @@
     String content = null;
 
     if (t.length == 3) {
-       username = t[0] !=null ? t[0] : "";
-       title = t[1] !=null ? t[1] : "";
-       content = t[2] !=null ? t[2] : "";
+        username = t[0] != null ? t[0] : "";
+        title = t[1] != null ? t[1] : "";
+        content = t[2] != null ? t[2] : "";
     }
     // 读取username,title和content
 
