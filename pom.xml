@@ -36,6 +36,12 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.webjars.npm</groupId>
+            <artifactId>marked</artifactId>
+            <version>5.1.0</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

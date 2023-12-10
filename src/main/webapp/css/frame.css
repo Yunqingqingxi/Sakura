@@ -15,6 +15,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between; /* 新增：将子元素分散对齐 */
+    z-index: 9999; /* 设置 z-index 为一个足够大的值，确保在顶层 */
 }
 
 #img {
@@ -46,7 +47,7 @@ body {
     font-size: 16px;
     border-radius: 5px;
     margin-right: 250px;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 #main {
@@ -70,7 +71,7 @@ body {
     width: 200px; /* 新增：调整搜索栏宽度 */
     padding: 5px; /* 新增：调整搜索栏内边距 */
     margin-right: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .top-Bar-tool {
@@ -127,7 +128,14 @@ body {
 
 .frame {
     border: 1px;
+    width: 100%;
+    height: 100%;
+    background-image: url("../image/img.png");
+    background-size: cover;
     position: absolute;
+    left: 0;
+    top: 0;
+    filter: blur(5px);
 }
 
 /* 博客编辑页的版心 */

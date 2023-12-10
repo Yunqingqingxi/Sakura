@@ -12,6 +12,16 @@
     <meta charset="UTF-8">
     <title>评论页面</title>
     <style>
+        body {
+            background-image: url("./image/preview.jpg");
+            background-size: cover;
+            position: absolute;
+            left: 0;
+            top: 0;
+            filter: blur(5px);
+            width: 100%;
+            height: 100%;
+        }
         form {
             margin-top: 20px;
         }
@@ -39,6 +49,7 @@
     </style>
 </head>
 <body>
+<div class="frame-pl"></div>
 <h1>发表评论</h1>
 <form action="pl" method="post">
     <label for="username">用户名：</label>

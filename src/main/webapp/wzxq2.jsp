@@ -1,9 +1,9 @@
 <%--
-  Created by IntelliJ IDEA.
-  User: hking
-  Date: 2023/12/5
-  Time: 19:09
-  To change this template use File | Settings | File Templates.
+Created by IntelliJ IDEA.
+User: hking
+Date: 2023/12/5
+Time: 19:09
+To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
@@ -13,12 +13,14 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>微博文章详情</title>
+    <title>文章详情</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="icon" href="image/文章.png">
+    <link rel="stylesheet" href="css/frame.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/per%20message1.css">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-        }
         .container {
             width: 80%;
             margin: 0 auto;
@@ -68,29 +70,27 @@
 %>
 <div class="container">
     <%
+        String content1 = null;
+        String title = null;
+        String datetime = null;
         try {
-            Connection connection = DBUtil.getConnection();
-            String sql = "SELECT * FROM message where username=?";
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1,loggedInUsername);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-    %>
-    <h1 style="text-align: center"><%-- 从数据库中获取文章标题 --%><%= resultSet.getString("title") %></h1>
-    <hr>
-    <div class="date" style="text-align: center"><%= resultSet.getString("datetime") %>
-    </div>
-    <hr>
-    <div><%-- 从数据库中获取文章内容 --%><p><%= resultSet.getString("content") %></p></div>
-    <%
-            }
-            resultSet.close();
-            preparedStatement.close();
-            connection.close();
+            content1 = DBUtil.readContent(loggedInUsername);
+            title = DBUtil.readTitle(loggedInUsername);
+            datetime = DBUtil.readDatetime(loggedInUsername);
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     %>
+    <h1 style="text-align: center"><%-- 从数据库中获取文章标题 --%><%= title%></h1>
+    <hr>
+    <div class="date" style="text-align: center"><%= datetime%>
+    </div>
+    <hr>
+    <div>
+        <%-- 从数据库中获取文章内容 --%>
+        <div id="$m" class="markdown-body"></div>
+        <textarea id="$t" style="display: none"><%= content1%></textarea>
+    </div>
 </div>
 <div  class="container">
 <a>评论</a>
@@ -98,27 +98,44 @@
     <%
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DBUtil.getConnection();
+            Connection conn = DBUtil.getConnection();
             String sql1 = "SELECT * FROM pl";
-            PreparedStatement preparedStatement = connection.prepareStatement(sql1);
-            ResultSet resultSet1 = preparedStatement.executeQuery();
+            PreparedStatement Statement = conn.prepareStatement(sql1);
+            ResultSet resultSet1 = Statement.executeQuery();
             while (resultSet1.next()) {
     %>
-    <div class="name"><%-- 从数据库中获取文章内容 --%><p><%= resultSet1.getString("name") %></p></div>
-    <div><%-- 从数据库中获取文章内容 --%><p><%= resultSet1.getString("content") %></p></div>
-    <div class="date"><%= resultSet1.getString("date") %></div>
+    <div class="name"><%-- 从数据库中获取文章内容 --%><p><%=resultSet1.getString("name")%>
+    </p></div>
+    <div><%-- 从数据库中获取文章内容 --%><p><%=resultSet1.getString("content")%>
+    </p></div>
+    <div class="date"><%=resultSet1.getString("date")%>
+    </div>
     <hr>
     <%
             }
             resultSet1.close();
-            preparedStatement.close();
-            connection.close();
+            Statement.close();
+            conn.close();
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     %>
 </div>
+<%--<script>--%>
+<%--    // 获取从数据库中获取的 markdown 格式内容--%>
+<%--    var markdownContent = document.getElementById('markdownContent').innerHTML;--%>
+
+<%--    console.log(markdownContent);--%>
+
+<%--    // 将 markdown 转换为 HTML--%>
+<%--    var htmlContent = marked(markdownContent);--%>
+
+<%--    // 将转换后的 HTML 内容替换到原有的元素中--%>
+<%--    document.getElementById('markdownContent').innerHTML = htmlContent;--%>
+<%--</script>--%>
+<script>$m.innerHTML = marked.parse($t.value);</script>
 </body>
+
 </html>
 
 

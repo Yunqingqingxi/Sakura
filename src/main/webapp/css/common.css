@@ -9,7 +9,7 @@
 html, body {
     height: 100%;
     /* 页面背景 */
-    background-image: url(img.png);
+    background-image: url(../image/img.png);
 / / 在image中添加背景图 background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

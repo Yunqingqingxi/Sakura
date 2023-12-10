@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/frame.css">
     <link rel="stylesheet" href="css/blog.css">
     <link rel="stylesheet" href="css/per%20message1.css">
+    <link rel="icon" href="image/主页.png">
     <!-- 引入依赖 -->
     <link rel="stylesheet" href="editor.md-master/css/editormd.min.css">
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -22,10 +23,10 @@
     <script src="editor.md-master/editormd.js"></script>
 </head>
 <body>
-<div class="frame">
+<div class="frame"></div>
     <div class="top-Bar">
         <img src="image/XG.jpg" alt="" id="img">
-        <p id="panel">首页</p>
+        <p id="panel" style="font-style: italic;font-size: large">首页</p>
         <form action="search" method="post">
             <div class="top-Bar-pos">
                 <input class="search-input" type="search" placeholder="搜索" id="search" name="s-title"/>
@@ -33,8 +34,8 @@
             </div>
         </form>
         <div class="top-Bar-tool">
-            <a href="Sakura.html" id="main">主页</a>
             <a href="wzxq2.jsp" id="send">查看文章</a>
+            <a href="register.jsp" id="main">注册</a>
             <a href="login.jsp" id="login">登录</a>
             <a href="login.jsp" id="down" style="display: none">注销</a>
         </div>
@@ -84,7 +85,7 @@
             <button id="add">添加资料</button>
         </div>
     </div>
-
+<div>
     <form action="message" method="post">
         <div class="blog-edit-container">
             <!-- 标题编辑区 -->
@@ -100,7 +101,6 @@
         </div>
     </form>
 </div>
-<div>
     <form action="person" method="post">
         <div class="form-container" style="display: none" id="user-mes">
             <h2>个人信息</h2>
@@ -123,7 +123,6 @@
             <button type="submit" id="submitBtn" onclick="saveAndHide()">保存</button>
         </div>
     </form>
-</div>
 <!-- 其他HTML代码 -->
 <script>
     // 在页面加载完成后执行

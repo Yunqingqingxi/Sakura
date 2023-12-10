@@ -11,6 +11,7 @@
     <title>注册页面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/register.css">
+    <link rel="icon" href="image/注册.png">
 </head>
 <section>
     <body>
@@ -47,9 +48,6 @@
             <FORM action="register" method="post">
                 <div class="inputBox">
                     <input type="text" placeholder="用户名" name="username" style="color:black"><%=message%>
-                </div>
-                <div class="inputBox">
-                    <input type="email" placeholder="邮箱" name="email" style="color:black">
                 </div>
                 <div class="inputBox">
                     <input type="password" placeholder="密码" name="password" style="color:black">

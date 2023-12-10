@@ -306,4 +306,59 @@ public class DBUtil {
         } finally {
             conn.close();
         }
-}}
+    }
+
+    // 读取message表中的content内容，以便后续数据写入
+    public static String readContent(String loggedInUsername) throws SQLException {
+        Connection connection = DBUtil.getConnection();
+
+        String sql = "SELECT * FROM message where username=?";
+
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1, loggedInUsername);
+
+        ResultSet rs = preparedStatement.executeQuery();
+        String content = null; // 返回content字段的值
+        while (rs.next()) {
+            content = rs.getString("content");
+        }
+        return content; // 返回content字段的值
+    }
+
+    // 读取message表中的title内容，以便后续数据写入
+    public static String readTitle(String loggedInUsername) throws SQLException {
+        Connection connection = DBUtil.getConnection();
+
+        String sql = "SELECT * FROM message where username=?";
+
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1, loggedInUsername);
+
+        ResultSet rs = preparedStatement.executeQuery();
+
+        String title = null; // 返回title字段的值
+
+        while (rs.next()) {
+            title = rs.getString("title"); // 返回title字段的值
+        }
+        return title; // 返回title字段的值
+    }
+
+    // 读取message表中的datetime内容，以便后续数据写入
+
+    public static String readDatetime(String loggedInUsername) throws SQLException {
+        Connection connection = DBUtil.getConnection();
+
+        String sql = "SELECT * FROM message where username=?";
+
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1, loggedInUsername);
+
+        ResultSet rs = preparedStatement.executeQuery();
+        String datetime = null; // 返回datetime字段的值
+        while (rs.next()) {
+            datetime = rs.getString("datetime"); // 返回datetime字段的值 不用了 不用了 不用了 不用了 不用了 不用了 不用� 不用了
+        }
+        return datetime; // 返回datetime字段的值
+    }
+}
