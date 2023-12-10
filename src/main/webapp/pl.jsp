@@ -18,7 +18,6 @@
             position: absolute;
             left: 0;
             top: 0;
-            filter: blur(5px);
             width: 100%;
             height: 100%;
         }
