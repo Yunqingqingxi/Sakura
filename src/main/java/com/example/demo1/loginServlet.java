@@ -23,6 +23,12 @@ public class loginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+/*
+*这是实现登录的servlet
+*通过获取username和password
+*调用Server.login(username, password);方法实现
+*/
+
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html;charset=UTF-8");
 
