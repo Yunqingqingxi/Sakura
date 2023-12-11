@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" href="image/账号.png">
-        <title>登录</title>
+        <title>登录🫡</title>
     </head>
     <!--section包括一个独立章节，一般含一个标题-->
     <section >
