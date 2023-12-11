@@ -12,7 +12,7 @@ public class DBUtil {
             throw new RuntimeException(e);
         }
     }
-
+    // 连接数据库的方法
     private final Connection conn = null;
     private final Statement statement = null;
 
@@ -32,7 +32,7 @@ public class DBUtil {
         return conn;
     }
 
-    // 登录
+    // 登录的方法
     public static boolean login(String username, String password) {
         Connection conn = null;
         PreparedStatement statement = null;
@@ -55,7 +55,7 @@ public class DBUtil {
     }
 
 
-    // 注册
+    // 注册的方法
     public static int register(String username, String password) {
         Connection conn = null;
         PreparedStatement statement = null;
@@ -74,7 +74,7 @@ public class DBUtil {
         }
     }
 
-
+    // 取得当前用户名
     public static int select(String username) throws SQLException {
         Connection conn = DBUtil.getConnection();
 
@@ -132,7 +132,7 @@ public class DBUtil {
             throw new RuntimeException(e);
         }
     }
-
+    // 文章写入数据库
     public static void insertMessage(String username, String title, String content) throws SQLException {
         Connection conn = DBUtil.getConnection();
         try {
@@ -180,7 +180,7 @@ public class DBUtil {
             throw new RuntimeException(e);
         }
     }
-
+    // 用户个人信息的写入
     public static void insertMes(String username, String name, String email, String sex, int age) {
         Connection connection = DBUtil.getConnection();
         try {
@@ -284,6 +284,7 @@ public class DBUtil {
             }
         }
     }
+    // 插入评论的方法
     public static void insertMessage2(String name,String content) throws SQLException {
         Connection conn = DBUtil.getConnection();
         try {
