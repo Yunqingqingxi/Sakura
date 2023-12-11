@@ -32,11 +32,6 @@
     <div class="box"></div>
     <!--背景圆-->
     <!--从0开始添加第一个圆,style="--x:0"-->
-    <div class="circle" style="--x:0"></div>
-    <div class="circle" style="--x:1"></div>
-    <div class="circle" style="--x:2"></div>
-    <div class="circle" style="--x:3"></div>
-    <div class="circle" style="--x:4"></div>
     <!--如果你的div用了container的样式，那么它的宽度最大也大不过12个栅栏总共的最大宽度。-->
     <!--当你的div用了container-fluid的样式，它会无视12个栅栏的规定，根据屏幕自动适应自动填充。-->
     <!--当然，宽度要设置为width:100%-->
