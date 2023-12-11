@@ -19,6 +19,13 @@ public class Message extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+/* 
+*这个servlet是用来写入文章内容的
+*通过per_frame.jsp端发送的username，title，content
+*调用DBUtil.selectUsername()方法实现文章的写入
+*/
+    
+
         // 设置请求和响应的编码和内容类型
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html");
@@ -30,6 +37,7 @@ public class Message extends HttpServlet {
         System.out.println(title);
 
         try {
+            // 创建session记住当前登录状态，并获取username存入loggedInUsername
             HttpSession session = req.getSession();
             String loggedInUsername = (String) session.getAttribute("username");
 
