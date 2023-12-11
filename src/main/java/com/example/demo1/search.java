@@ -16,6 +16,12 @@ public class search extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        /*
+        这是实现搜索的servlet
+        通过属性s-title
+        调用DBUtil.selectTitle(title);方法实现
+        */
+
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html;charset=UTF-8");
 
