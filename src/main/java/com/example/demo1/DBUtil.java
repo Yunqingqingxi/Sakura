@@ -12,6 +12,7 @@ public class DBUtil {
             throw new RuntimeException(e);
         }
     }
+
     // 连接数据库的方法
     private final Connection conn = null;
     private final Statement statement = null;
