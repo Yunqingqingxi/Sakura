@@ -95,9 +95,7 @@
             </div>
 
             <!-- 内容编辑区 -->
-            <div id="editor">
-
-            </div>
+            <div id="editor"></div>
         </div>
     </form>
 </div>
