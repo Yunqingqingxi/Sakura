@@ -57,7 +57,7 @@ public class updateServlet extends HttpServlet {
         int row = Server.updatePassword(username, pwd);
 
         if (row > 0) {
-            resp.sendRedirect("login.jsp");
+            resp.sendRedirect("index.jsp");
             System.out.println("更新成功");
         } else {
             resp.sendRedirect("update.jsp");

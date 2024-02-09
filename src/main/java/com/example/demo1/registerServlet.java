@@ -76,11 +76,11 @@ public class registerServlet extends HttpServlet {
         // 如果注册成功，重定向到登录界面
         if (row > 0) {
             // 设置延迟时间，单位为毫秒
-            int delay = 1000;
+            int delay = 3000;
 // 使当前线程暂停指定的时间
             try {
                 Thread.sleep(delay);
-                resp.sendRedirect("login.jsp");
+                resp.sendRedirect("index.jsp");
                 return;
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);

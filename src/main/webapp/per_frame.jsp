@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/frame.css">
     <link rel="stylesheet" href="css/blog.css">
     <link rel="stylesheet" href="css/per%20message1.css">
-    <link rel="icon" href="image/主页.png">
+    <link rel="icon" href="image/Main.png">
     <!-- 引入依赖 -->
     <link rel="stylesheet" href="editor.md-master/css/editormd.min.css">
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -36,8 +36,8 @@
         <div class="top-Bar-tool">
             <a href="wzxq2.jsp" id="send">查看文章</a>
             <a href="register.jsp" id="main">注册</a>
-            <a href="login.jsp" id="login">登录</a>
-            <a href="login.jsp" id="down" style="display: none">注销</a>
+            <a href="index.jsp" id="login">登录</a>
+            <a href="index.jsp" id="down" style="display: none">注销</a>
         </div>
     </div>
     <p><%= request.getAttribute("user_message") %>

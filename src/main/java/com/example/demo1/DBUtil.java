@@ -19,7 +19,7 @@ public class DBUtil {
 
 
     public static Connection getConnection() {
-        String url = "jdbc:mysql://localhost:3306/userdata";
+        String url = "jdbc:mysql://120.26.208.222:3306/userdata";
         String user = "root";
         String password = "OVObzd";
 

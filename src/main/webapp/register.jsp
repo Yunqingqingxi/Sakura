@@ -11,7 +11,7 @@
     <title>注册页面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/register.css">
-    <link rel="icon" href="image/注册.png">
+    <link rel="icon" href="image/register.png">
 </head>
 <section>
     <body>

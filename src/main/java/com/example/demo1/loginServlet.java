@@ -59,7 +59,7 @@ public class loginServlet extends HttpServlet {
 
         } else {
             req.setAttribute("errorMessage", "用户名或密码错误");
-            req.getRequestDispatcher("login.jsp").forward(req, resp);
+            req.getRequestDispatcher("index.jsp").forward(req, resp);
         }
     }
 

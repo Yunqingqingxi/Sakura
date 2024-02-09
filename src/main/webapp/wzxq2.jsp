@@ -15,7 +15,7 @@ To change this template use File | Settings | File Templates.
     <meta charset="UTF-8">
     <title>文章详情</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <link rel="icon" href="image/文章.png">
+    <link rel="icon" href="image/article.png">
     <link rel="stylesheet" href="css/frame.css">
     <link rel="stylesheet" href="css/blog.css">
     <link rel="stylesheet" href="css/per%20message1.css">
